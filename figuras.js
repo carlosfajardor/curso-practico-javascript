@@ -97,3 +97,45 @@ function calcularAreaCuadrado(){
 	const area = areaCuadrado(value);
 	alert(area);
 }
+console.group("Isósceles");
+
+function perimetroIsosceles(lado1, lado2, base){
+	if(lado1 === lado2 && lado1 !== base){
+		console.log("Es un triangulo isósceles");
+			return lado1 + lado2 + base
+	}else if (lado2 === base && lado2 !== lado1) {
+		console.log("Es un triangulo Isósceles 2");
+		return lado1 + lado2 + base
+	}else if (lado1 === base && lado1 !== lado2){
+		console.log("Es un triangulo Isósceles 3");
+		return lado1 + lado2 + base
+	}else {
+		console.log("No es un triangulo isósceles");
+	}
+	
+}
+
+function areaIsosceles(lado1, lado2, lado3){
+	if(lado1 === lado2 && lado1 !== lado3){
+		console.log("Es un triangulo isósceles");
+		console.log("El área de tu triangulo isósceles es: ")
+		const alturaIsosceles = Math.sqrt((Math.pow(lado1,2))-(Math.pow(lado3 , 2)/4));
+		return (lado3 * alturaIsosceles)/2
+			//return ((base) * (Math.sqrt(Math.pow(lado1,2))-(Math.pow(base, 2)/4))) / 2
+	}else if (lado2 === lado3 && lado2 !== lado1) {
+		console.log("Es un triangulo Isósceles 2");
+		console.log("El área de tu triangulo isósceles es: ")
+		const alturaIsosceles = Math.sqrt((Math.pow(lado2,2))-(Math.pow(lado1 , 2)/4));
+		return (lado1 * alturaIsosceles)/2
+	}else if (lado1 === lado3 && lado1 !== lado2){
+		console.log("Es un triangulo Isósceles 3");
+		console.log("El área de tu triangulo isósceles es: ")
+		const alturaIsosceles = Math.sqrt((Math.pow(lado1,2))-(Math.pow(lado2 , 2)/4));
+		return (lado2 * alturaIsosceles)/2
+	}else {
+		console.log("No es un triangulo isósceles");
+	}
+	
+}
+
+console.groupEnd("Isósceles");
